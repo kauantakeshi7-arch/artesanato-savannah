@@ -585,8 +585,15 @@ footer {
         gap: 1rem;
     }
     
-    /* Snap Scroll for Gallery and Steps */
-    .gallery-grid, .steps-grid {
+    /* Gallery - Revert to Vertical for better UX */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Steps - Keep Horizontal Scroll */
+    .steps-grid {
         display: flex;
         overflow-x: auto;
         overflow-y: hidden;
@@ -598,18 +605,18 @@ footer {
     }
     
     .image-wrapper {
-        height: 250px; /* Fix image proportion on mobile */
+        height: 220px; /* Reduced height so images are not overwhelmingly big */
     }
     
-    .gallery-grid::-webkit-scrollbar, .steps-grid::-webkit-scrollbar {
+    .steps-grid::-webkit-scrollbar {
         height: 6px;
     }
-    .gallery-grid::-webkit-scrollbar-thumb, .steps-grid::-webkit-scrollbar-thumb {
+    .steps-grid::-webkit-scrollbar-thumb {
         background: rgba(212, 175, 55, 0.5);
         border-radius: 10px;
     }
 
-    .gallery-item, .step-card {
+    .step-card {
         min-width: 85%;
         scroll-snap-align: center;
         flex: 0 0 auto;
