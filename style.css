@@ -571,6 +571,8 @@ footer {
     }
     .section-container {
         padding: 4rem 1rem;
+        width: 100%;
+        overflow: hidden;
     }
     .hero h1 {
         font-size: 2.8rem;
@@ -587,10 +589,16 @@ footer {
     .gallery-grid, .steps-grid {
         display: flex;
         overflow-x: auto;
+        overflow-y: hidden;
         scroll-snap-type: x mandatory;
         gap: 1rem;
         padding-bottom: 1rem;
         -webkit-overflow-scrolling: touch;
+        width: 100%;
+    }
+    
+    .image-wrapper {
+        height: 250px; /* Fix image proportion on mobile */
     }
     
     .gallery-grid::-webkit-scrollbar, .steps-grid::-webkit-scrollbar {
